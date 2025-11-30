@@ -5,7 +5,7 @@ from visualize import plot_category_expenses, plot_monthly_expenses
 
 def print_menu():
     print("\n" + "=" * 40)
-    print("      💰 Smart Expense Tracker 💰")
+    print("       Smart Expense Tracker ")
     print("=" * 40)
     print("1. Add new expense")
     print("2. View recent expenses")
@@ -47,7 +47,7 @@ def main():
             break
 
         else:
-            print("❌ Invalid choice. Please try again.")
+            print("Invalid choice. Please try again.")
 
 
 if __name__ == "__main__":

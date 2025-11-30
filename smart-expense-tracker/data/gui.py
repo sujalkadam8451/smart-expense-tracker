@@ -27,7 +27,7 @@ sidebar.grid(row=0, column=0, sticky="nsw")
 
 logo = ctk.CTkLabel(
     sidebar,
-    text="💰 Expense\nTracker",
+    text=" Expense\nTracker",
     font=("Poppins", 24, "bold"),
     justify="left"
 )
@@ -91,7 +91,7 @@ def get_dashboard_stats():
     }
 
 
-def create_stat_card(parent, title, value, emoji):
+def create_stat_card(parent, title, value, emoji=""):
     card = ctk.CTkFrame(parent, corner_radius=18)
     card.pack(side="left", expand=True, fill="both", padx=10)
 
@@ -207,10 +207,10 @@ def show_home():
 
     stats = get_dashboard_stats()
 
-    create_stat_card(stats_frame, "Total Spent (₹)", stats["Total Spent (₹)"], "💳")
-    create_stat_card(stats_frame, "Total Records", stats["Total Records"], "📂")
-    create_stat_card(stats_frame, "Categories", stats["Categories"], "🧾")
-    create_stat_card(stats_frame, "Last Entry", stats["Last Entry"], "📅")
+    create_stat_card(stats_frame, "Total Spent (₹)", stats["Total Spent (₹)"])
+    create_stat_card(stats_frame, "Total Records", stats["Total Records"])
+    create_stat_card(stats_frame, "Categories", stats["Categories"])
+    create_stat_card(stats_frame, "Last Entry", stats["Last Entry"])
 
     # form area
     form_wrapper = ctk.CTkFrame(main_frame, corner_radius=18)
@@ -281,7 +281,7 @@ def show_home():
         add_expense()
         builtins.input = old_input
 
-        messagebox.showinfo("Success", "Expense added successfully ✅")
+        messagebox.showinfo("Success", "Expense added successfully ")
 
         # clear fields
         date_entry.delete(0, "end")
@@ -294,7 +294,7 @@ def show_home():
 
     add_btn = ctk.CTkButton(
         form_wrapper,
-        text="➕ Save Expense",
+        text=" Save Expense",
         font=("Poppins", 16, "bold"),
         height=44,
         corner_radius=14,
@@ -307,19 +307,19 @@ def show_home():
 
 
 # ------------- NAV BUTTONS (after functions defined) -------------
-btn_home = nav_button("🏠 Dashboard", show_home)
+btn_home = nav_button("Dashboard", show_home)
 btn_home.pack(pady=8, fill="x", padx=15)
 
-btn_summary = nav_button("📊 Category Summary", category_summary_gui)
+btn_summary = nav_button("Category Summary", category_summary_gui)
 btn_summary.pack(pady=8, fill="x", padx=15)
 
-btn_monthly = nav_button("📈 Monthly Summary", monthly_summary_gui)
+btn_monthly = nav_button("Monthly Summary", monthly_summary_gui)
 btn_monthly.pack(pady=8, fill="x", padx=15)
 
-btn_cchart = nav_button("📌 Category Chart", plot_category_expenses)
+btn_cchart = nav_button("Category Chart", plot_category_expenses)
 btn_cchart.pack(pady=8, fill="x", padx=15)
 
-btn_mchart = nav_button("📌 Monthly Chart", plot_monthly_expenses)
+btn_mchart = nav_button("Monthly Chart", plot_monthly_expenses)
 btn_mchart.pack(pady=8, fill="x", padx=15)
 
 # filler at bottom

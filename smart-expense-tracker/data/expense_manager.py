@@ -25,7 +25,7 @@ def add_expense():
     try:
         datetime.strptime(date_str, "%Y-%m-%d")
     except ValueError:
-        print("❌ Invalid date format")
+        print("Invalid date format")
         return
 
     category = input("Category (food/travel/bills/other): ").strip() or "other"
@@ -35,14 +35,14 @@ def add_expense():
     try:
         amount = float(amount_str)
     except ValueError:
-        print("❌ Invalid amount")
+        print("Invalid amount")
         return
 
     with open(CSV_FILE, "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([date_str, category, description, amount])
 
-    print("✅ Expense Added")
+    print("Expense Added")
 
 
 def list_expenses(limit=None):

@@ -1,4 +1,4 @@
-# Smart Expense Tracker 💰📊
+# Smart Expense Tracker 
 
 A simple Python CLI project to track daily expenses, analyze spending, and visualize charts.
 
