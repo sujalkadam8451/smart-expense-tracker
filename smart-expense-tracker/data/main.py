@@ -43,7 +43,7 @@ def main():
             plot_monthly_expenses()
 
         elif choice == "0":
-            print("👋 Thank you for using Expense Tracker!")
+            print("Thank you for using Expense Tracker!")
             break
 
         else:
